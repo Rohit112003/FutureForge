@@ -1,4 +1,5 @@
-update the env values
+Update the env values
+
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 
