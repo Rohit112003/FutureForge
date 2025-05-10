@@ -50,6 +50,8 @@ export default async function Header() {
                 <LayoutDashboard className="h-4 w-4" />
               </Button>
             </Link>
+
+            {/* Growth Tools Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button className="flex items-center gap-2">
@@ -97,7 +99,7 @@ export default async function Header() {
                   avatarBox: "w-10 h-10",
                   userButtonPopoverCard: "shadow-xl",
                   userPreviewMainIdentifier: "font-semibold",
-                }
+                },
               }}
               afterSignOutUrl="/"
             />

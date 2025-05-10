@@ -1,18 +1,7 @@
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
-import HeroSection from "@/components/hero";
-import { features } from "@/data/features";
-import { testimonial } from "@/data/testimonial";
-import { faqs } from "@/data/faqs";
-import { howItWorks } from "@/data/howItWorks";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
   Trophy,
@@ -20,13 +9,28 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
-export default function Home() {
+import HeroSection from "@/components/hero";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import Image from "next/image";
+import { features } from "@/data/features";
+import { testimonial } from "@/data/testimonial";
+import { faqs } from "@/data/faqs";
+import { howItWorks } from "@/data/howItWorks";
+
+export default function LandingPage() {
   return (
     <>
       <div className="grid-background"></div>
-      <HeroSection/>
 
-      {/* //Feature section  */}
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Features Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">
@@ -53,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* stats Section  */}
+      {/* Stats Section */}
       <section className="w-full py-12 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
@@ -77,8 +81,8 @@ export default function Home() {
         </div>
       </section>
 
-       {/* How It Works Section */}
-       <section className="w-full py-12 md:py-24 bg-background">
+      {/* How It Works Section */}
+      <section className="w-full py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-4">How It Works</h2>
@@ -153,6 +157,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section className="w-full py-12 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -202,7 +207,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-    </>              
+    </>
   );
 }
