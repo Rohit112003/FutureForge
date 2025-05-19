@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { redirect } from "next/navigation";
 import {
   BarChart,
   Bar,
@@ -27,8 +28,10 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 const DashboardView = ({ insights }) => {
+  const router = useRouter();
   // Transform salary data for the chart
   const salaryData = insights.salaryRanges.map((range) => ({
     name: range.role,
@@ -72,11 +75,16 @@ const DashboardView = ({ insights }) => {
     new Date(insights.nextUpdate),
     { addSuffix: true }
   );
+  const handleSubmit = ()=>{
+    router.push("/onboarding");
+
+  }
 
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <Badge variant="outline">Last updated: {lastUpdatedDate}</Badge>
+        <Button onClick= {handleSubmit}>Reset</Button>
       </div>
 
       {/* Market Overview Cards */}
